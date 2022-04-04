@@ -1,1 +1,1 @@
-# Big-Data-Solution-1-Snowflake-Data-Lake-Solution
+# Big-Data-Solution-1-Snowflake-Data-Lake-Approach
