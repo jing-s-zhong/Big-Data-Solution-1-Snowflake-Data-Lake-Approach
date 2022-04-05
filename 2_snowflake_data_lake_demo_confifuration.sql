@@ -3,6 +3,9 @@
 --
 USE DATABASE STG;
 
+/********************************************************************
+ ** Schema Configuration Section
+ ********************************************************************/
 --
 -- execute context
 --
@@ -951,3 +954,19 @@ CALL CTRL_TASK_SCHEDULER('DATA_LOADER','WORK');
 CALL CTRL_TASK_SCHEDULER('DATA_VERSION','DEBUG');
 CALL CTRL_TASK_SCHEDULER('DATA_VERSION','WORK');
 */
+
+/********************************************************************
+ ** Schema Update Manually
+ ********************************************************************/
+--
+-- excution context
+--
+USE SCHEMA STG._METADATA;
+
+--
+-- Update data lake schema
+--
+CALL CTRL_SCHEMA_UPDATER('WORK');
+
+--CALL CTRL_TASK_SCHEDULER('DATA_LOADER','DEBUG');
+--CALL CTRL_TASK_SCHEDULER('DATA_LOADER','WORK');

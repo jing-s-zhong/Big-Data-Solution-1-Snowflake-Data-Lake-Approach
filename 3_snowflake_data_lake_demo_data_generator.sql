@@ -3,7 +3,9 @@
 --
 USE DATABASE STG;
 
---
+/********************************************************************
+ ** Populate dummy demo data manually
+ ********************************************************************/--
 -- execute context
 --
 USE SCHEMA _METADATA;
@@ -292,3 +294,12 @@ SELECT * FROM SFDC_EMAIL_MSTM.XREF_MESSAGE;
 SELECT * FROM SFDC_EMAIL_MSTM.XREF_PERSON_EMAIL;
 SELECT * FROM SFDC_EMAIL_MSTM.XREF_MESSAGE_EMAIL;
 */
+
+
+/********************************************************************
+ ** Process dummy demo data manually
+ ********************************************************************/--
+USE SCHEMA STG._METADATA;
+
+--CALL CTRL_TASK_SCHEDULER('DATA_LOADER','DEBUG');
+CALL CTRL_TASK_SCHEDULER('DATA_LOADER','WORK');
