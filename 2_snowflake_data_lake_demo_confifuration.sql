@@ -39,7 +39,7 @@ USING (
         TRUE AUTOMATED
     FROM VALUES 
       (
-        'IH',
+        'CILENT1',
         'EMAIL',
         'GOWS',
         'PERSON',
@@ -74,7 +74,7 @@ USING (
                 "FIELD_FOR_HASH": true,
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": true,
-                "FIELD_NAME": "COMPANY",
+                "FIELD_NAME": "ORGANIZATION",
                 "FIELD_TRANS": "",
                 "FIELD_TYPE": "TEXT"
             },
@@ -195,7 +195,7 @@ USING (
         ]$$
       ),
       (
-        'IH',
+        'CILENT1',
         'EMAIL',
         'GOWS',
         'MESSAGE',
@@ -383,7 +383,7 @@ USING (
         ]$$
       ),
       (
-        'IH',
+        'CILENT1',
         'EMAIL',
         'GOWS',
         'DATA3',
@@ -515,7 +515,7 @@ USING (
         ]$$
       ),
       (
-        'SFDC',
+        'CILENT2',
         'EMAIL',
         'MSTM',
         'PERSON',
@@ -550,7 +550,7 @@ USING (
                 "FIELD_FOR_HASH": true,
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": true,
-                "FIELD_NAME": "COMPANY",
+                "FIELD_NAME": "ORGANIZATION",
                 "FIELD_TRANS": "",
                 "FIELD_TYPE": "TEXT"
             },
@@ -671,7 +671,7 @@ USING (
         ]$$
       ),
       (
-        'SFDC',
+        'CILENT2',
         'EMAIL',
         'MSTM',
         'MESSAGE',
@@ -931,7 +931,7 @@ CALL CTRL_SCHEMA_UPDATER('WORK');
 USE SCHEMA _METADATA;
 
 DELETE FROM CTRL_IMPORT 
-WHERE CLIENT_NAME = 'IH' 
+WHERE CLIENT_NAME = 'CILENT1' 
 AND PLATFORM_NAME = 'EMAIL'
 --AND PLATFORM_TYPE = 'TYPE1'
 AND DATA_NAME = 'MESSAGE';
