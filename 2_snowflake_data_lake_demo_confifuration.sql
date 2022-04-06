@@ -28,7 +28,7 @@ USING (
         $2 PLATFORM_NAME,
         $3 PLATFORM_TYPE,
         'STG' DATA_CATALOG,
-        CONCAT($1, '_', $2, '_', $3) DATA_SCHEMA,
+        CONCAT_WS('_', $1, $2, $3) DATA_SCHEMA,
         $4 DATA_NAME,
         NULL /*PARSE_JSON($5)*/ DATA_STAGE,
         NULL /*PARSE_JSON($6)*/ DATA_FORMAT,
@@ -41,10 +41,10 @@ USING (
       (
         'CILENT1',
         'EMAIL',
-        'GOWS',
+        'SALES',
         'PERSON',
-        $$['URL = \'s3://af-data-des-sandbox/ingest/jing/data1/\'', 'STORAGE_INTEGRATION = DES_INTEGRATION']$$,
-        $$['TYPE = JSON']$$,
+        $$['URL = \'s3://path/to/client1/person/data/\'', 'STORAGE_INTEGRATION = <integration_name>']$$,
+        $$['TYPE = <data_format_type>']$$,
         $$[
             {
                 "FIELD_FOR_HASH": true,
@@ -173,7 +173,7 @@ USING (
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": true,
                 "FIELD_NAME": "BATCH_ID",
-                "FIELD_TRANS": "CONCAT({{CLIENT_NAME}},\'_\',{{PLATFORM_NAME}},\'_\',{{DATA_NAME}},\'_\',TO_VARCHAR(CURRENT_DATE))",
+                "FIELD_TRANS": "CONCAT_WS(\'_\', {{CLIENT_NAME}}, {{PLATFORM_NAME}}, {{DATA_NAME}}, TO_VARCHAR(CURRENT_DATE))",
                 "FIELD_TYPE": "TEXT"
             },
             {
@@ -181,7 +181,7 @@ USING (
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": false,
                 "FIELD_NAME": "PLATFORM",
-                "FIELD_TRANS": "CONCAT({{CLIENT_NAME}},\'_\',{{PLATFORM_NAME}},\'_\',{{PLATFORM_TYPE}})",
+                "FIELD_TRANS": "CONCAT_WS(\'_\', {{CLIENT_NAME}}, {{PLATFORM_NAME}}, {{PLATFORM_TYPE}})",
                 "FIELD_TYPE": "TEXT"
             },
             {
@@ -197,10 +197,10 @@ USING (
       (
         'CILENT1',
         'EMAIL',
-        'GOWS',
+        'SALES',
         'MESSAGE',
-        $$['URL = \'s3://af-data-des-sandbox/ingest/jing/data1/\'', 'STORAGE_INTEGRATION = DES_INTEGRATION']$$,
-        $$['TYPE = JSON']$$,
+        $$['URL = \'s3://path/to/client1/message/data/\'', 'STORAGE_INTEGRATION = <integration_name>']$$,
+        $$['TYPE = <data_format_type>']$$,
         $$[
             {
                 "FIELD_FOR_HASH": true,
@@ -361,7 +361,7 @@ USING (
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": true,
                 "FIELD_NAME": "BATCH_ID",
-                "FIELD_TRANS": "CONCAT({{CLIENT_NAME}},\'_\',{{PLATFORM_NAME}},\'_\',{{DATA_NAME}},\'_\',TO_VARCHAR(CURRENT_DATE))",
+                "FIELD_TRANS": "CONCAT_WS(\'_\', {{CLIENT_NAME}}, {{PLATFORM_NAME}}, {{DATA_NAME}}, TO_VARCHAR(CURRENT_DATE))",
                 "FIELD_TYPE": "TEXT"
             },
             {
@@ -369,7 +369,7 @@ USING (
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": false,
                 "FIELD_NAME": "PLATFORM",
-                "FIELD_TRANS": "CONCAT({{CLIENT_NAME}},\'_\',{{PLATFORM_NAME}},\'_\',{{PLATFORM_TYPE}})",
+                "FIELD_TRANS": "CONCAT_WS(\'_\', {{CLIENT_NAME}}, {{PLATFORM_NAME}}, {{PLATFORM_TYPE}})",
                 "FIELD_TYPE": "TEXT"
             },
             {
@@ -385,10 +385,10 @@ USING (
       (
         'CILENT1',
         'EMAIL',
-        'GOWS',
+        'SALES',
         'DATA3',
-        $$['URL = \'s3://af-data-des-sandbox/ingest/jing/data1/\'', 'STORAGE_INTEGRATION = DES_INTEGRATION']$$,
-        $$['TYPE = JSON']$$,
+        $$['URL = \'s3://path/to/client1/data3/folder/\'', 'STORAGE_INTEGRATION = <integration_name>']$$,
+        $$['TYPE = <data_format_type>']$$,
         $$[
             {
                 "FIELD_FOR_HASH": true,
@@ -493,7 +493,7 @@ USING (
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": true,
                 "FIELD_NAME": "BATCH_ID",
-                "FIELD_TRANS": "CONCAT({{CLIENT_NAME}},\'_\',{{PLATFORM_NAME}},\'_\',{{DATA_NAME}},\'_\',TO_VARCHAR(CURRENT_DATE))",
+                "FIELD_TRANS": "CONCAT_WS(\'_\', {{CLIENT_NAME}}, {{PLATFORM_NAME}}, {{DATA_NAME}}, TO_VARCHAR(CURRENT_DATE))",
                 "FIELD_TYPE": "TEXT"
             },
             {
@@ -501,7 +501,7 @@ USING (
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": false,
                 "FIELD_NAME": "PLATFORM",
-                "FIELD_TRANS": "CONCAT({{CLIENT_NAME}},\'_\',{{PLATFORM_NAME}},\'_\',{{PLATFORM_TYPE}})",
+                "FIELD_TRANS": "CONCAT_WS(\'_\', {{CLIENT_NAME}}, {{PLATFORM_NAME}}, {{PLATFORM_TYPE}})",
                 "FIELD_TYPE": "TEXT"
             },
             {
@@ -517,10 +517,10 @@ USING (
       (
         'CILENT2',
         'EMAIL',
-        'MSTM',
+        'TECHS',
         'PERSON',
-        $$['URL = \'s3://af-data-des-sandbox/ingest/jing/data2/\'', 'STORAGE_INTEGRATION = DES_INTEGRATION']$$,
-        $$['TYPE = JSON']$$,
+        $$['URL = \'s3://path/to/client2/person/data/\'', 'STORAGE_INTEGRATION = <integration_name>']$$,
+        $$['TYPE = <data_format_type>']$$,
         $$[
             {
                 "FIELD_FOR_HASH": true,
@@ -649,7 +649,7 @@ USING (
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": true,
                 "FIELD_NAME": "BATCH_ID",
-                "FIELD_TRANS": "CONCAT({{CLIENT_NAME}},\'_\',{{PLATFORM_NAME}},\'_\',{{DATA_NAME}},\'_\',TO_VARCHAR(CURRENT_DATE))",
+                "FIELD_TRANS": "CONCAT_WS(\'_\', {{CLIENT_NAME}}, {{PLATFORM_NAME}}, {{DATA_NAME}}, TO_VARCHAR(CURRENT_DATE))",
                 "FIELD_TYPE": "TEXT"
             },
             {
@@ -657,7 +657,7 @@ USING (
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": false,
                 "FIELD_NAME": "PLATFORM",
-                "FIELD_TRANS": "CONCAT({{CLIENT_NAME}},\'_\',{{PLATFORM_NAME}},\'_\',{{PLATFORM_TYPE}})",
+                "FIELD_TRANS": "CONCAT_WS(\'_\', {{CLIENT_NAME}}, {{PLATFORM_NAME}}, {{PLATFORM_TYPE}})",
                 "FIELD_TYPE": "TEXT"
             },
             {
@@ -673,10 +673,10 @@ USING (
       (
         'CILENT2',
         'EMAIL',
-        'MSTM',
+        'TECHS',
         'MESSAGE',
-        $$['URL = \'s3://af-data-des-sandbox/ingest/jing/data2/\'', 'STORAGE_INTEGRATION = DES_INTEGRATION']$$,
-        $$['TYPE = JSON']$$,
+        $$['URL = \'s3://path/to/client2/message/data/\'', 'STORAGE_INTEGRATION = <integration_name>']$$,
+        $$['TYPE = <data_format_type>']$$,
         $$[
             {
                 "FIELD_FOR_HASH": true,
@@ -837,7 +837,7 @@ USING (
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": true,
                 "FIELD_NAME": "BATCH_ID",
-                "FIELD_TRANS": "CONCAT({{CLIENT_NAME}},\'_\',{{PLATFORM_NAME}},\'_\',{{DATA_NAME}},\'_\',TO_VARCHAR(CURRENT_DATE))",
+                "FIELD_TRANS": "CONCAT_WS(\'_\', {{CLIENT_NAME}}, {{PLATFORM_NAME}}, {{DATA_NAME}}, TO_VARCHAR(CURRENT_DATE))",
                 "FIELD_TYPE": "TEXT"
             },
             {
@@ -845,7 +845,7 @@ USING (
                 "FIELD_FOR_KEY": false,
                 "FIELD_FOR_XREF": false,
                 "FIELD_NAME": "PLATFORM",
-                "FIELD_TRANS": "CONCAT({{CLIENT_NAME}},\'_\',{{PLATFORM_NAME}},\'_\',{{PLATFORM_TYPE}})",
+                "FIELD_TRANS": "CONCAT_WS(\'_\', {{CLIENT_NAME}}, {{PLATFORM_NAME}}, {{PLATFORM_TYPE}})",
                 "FIELD_TYPE": "TEXT"
             },
             {
