@@ -222,7 +222,7 @@ USING (
                 "FIELD_FOR_HASH": true,
                 "FIELD_FOR_KEY": true,
                 "FIELD_FOR_XREF": true,
-                "FIELD_NAME": "AUDIENCE",
+                "FIELD_NAME": "RECIPIENTS",
                 "FIELD_TRANS": "",
                 "FIELD_TYPE": "VARIANT"
             },
@@ -698,7 +698,7 @@ USING (
                 "FIELD_FOR_HASH": true,
                 "FIELD_FOR_KEY": true,
                 "FIELD_FOR_XREF": true,
-                "FIELD_NAME": "AUDIENCE",
+                "FIELD_NAME": "RECIPIENTS",
                 "FIELD_TRANS": "",
                 "FIELD_TYPE": "VARIANT"
             },
