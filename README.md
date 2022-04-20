@@ -35,6 +35,7 @@ git clone https://github.com/jing-s-zhong/Big-Data-Solution-1-Snowflake-Data-Lak
 
 ### 8. Check presentation data change
 
+
 ## Clean up test stuff
 
 ### 1. Clear the configuration import table
