@@ -1,5 +1,6 @@
 # Snowflake Data Lake Solution
 
+
 ## Solution Overview
 
 ![Data Lake Solution Overview](solution_overview.jpg?raw=true "Data Lake Solution Overview")
