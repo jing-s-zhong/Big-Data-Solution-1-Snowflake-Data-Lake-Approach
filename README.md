@@ -5,7 +5,7 @@
 ![Data Lake Solution Overview](solution_overview.jpg?raw=true "Data Lake Solution Overview")
 Figure-1 Data Lake Solution Diagram
 
-## Solution Deployment
+## Deploy the Solution
 
 ### 1. Clone repostary to local computer
 ```
@@ -17,7 +17,7 @@ git clone https://github.com/jing-s-zhong/Big-Data-Solution-1-Snowflake-Data-Lak
 1_snowflake_data_lake_solution_deployment.sql
 ```
 
-## Solution Test
+## Test the Solution
 
 ### 1. Setup test data lake configuration
 
@@ -36,7 +36,7 @@ git clone https://github.com/jing-s-zhong/Big-Data-Solution-1-Snowflake-Data-Lak
 ### 8. Check presentation data change
 
 
-## Clean up test stuff
+## Clean-up Test Stuff
 
 ### 1. Clear the configuration import table
 
