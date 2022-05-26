@@ -54,14 +54,14 @@ CALL CTRL_TASK_SCHEDULER('DATA_VERSION','WORK');
 
 ## Clean-up Test Stuff
 
-### 1. Clear the configuration import table
+### 1. Clear test configuration from config import table
 ```
 TRUNCATE TABLE CTRL_IMPORT;
 ```
 
-### 2. Manuallt run pipeline update task
+### 2. Run pipeline update task to remove the test objects
 ```
 CALL CTRL_SCHEMA_UPDATER('WORK');
 ```
 
-### 3. Check data lake object to make them gone
+### 3. Check data lake objects to ensure them gone
